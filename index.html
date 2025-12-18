@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengulangan Angka</title>
+</head>
+<body>
+
+<h2>Form Input Nilai</h2>
+
+<form onsubmit="return tampilkanHasil()">
+    <label>Masukkan Nilai Angka:</label><br>
+    <input type="number" id="nilai" required>
+    <br><br>
+    <button type="submit">Proses</button>
+</form>
+
+<h3>Hasil Pengulangan:</h3>
+<div id="hasil"></div>
+
+<script>
+function tampilkanHasil() {
+    let nilai = document.getElementById("nilai").value;
+    let hasil = "";
+
+    for (let i = 1; i <= nilai; i++) {
+        if (i % 15 === 0) {
+            hasil += "WEB<br>";
+        } else if (i % 3 === 0) {
+            hasil += "TI<br>";
+        } else if (i % 5 === 0) {
+            hasil += "Unindra<br>";
+        } else {
+            hasil += i + "<br>";
+        }
+    }
+
+    document.getElementById("hasil").innerHTML = hasil;
+    return false; // mencegah form refresh
+}
+</script>
+
+</body>
+</html>
